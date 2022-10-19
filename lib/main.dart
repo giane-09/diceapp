@@ -16,8 +16,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  int dadoIzquierdo =3;
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int DadoIzquierdo =5;
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +40,14 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: TextButton(
                     onPressed: () {
-                      print("dado izquiero");
-                      dadoIzquierdo=2;
-                      print(dadoIzquierdo);
+                      print("Dado Izquierdo");
+                      DadoIzquierdo=2;
+                      setState(() {
+                        
+                      });
                     },
                     child: Image.asset(
-                      "assets/images/dice$dadoIzquierdo.png",
+                      "assets/images/dice$DadoIzquierdo.png",
                     ),
                   ),
                   flex: 1,
@@ -63,3 +70,4 @@ class HomePage extends StatelessWidget {
         );
   }
 }
+
